@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Job </th>
+                <th>Salary</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.first_name }}</td>
+                <td>{{student.second_name}}</td>
+                <td>{{student.job}}</td>
+                <td>{{student.salary}}</td>
+            
+                    <!-- <a href="/edit/{{ employee.id }}">Edit</a>
+                    <a href="/delete/{{employee.id}}">Delete</a> -->
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a style="color:white;" href="/student">Add New Record</a></button>
+</body>
+
+</html>
